@@ -7,7 +7,7 @@ const MainNavigation = () => {
       <img src={Logo} alt="Logo" className="h-10 w-10" />
       <div className="flex gap-5">
         <NavItem to="/" text="Home" />
-        <NavItem to="/notes" text="My Notes" />
+        <NavItem to="/notes" text="Notes" />
       </div>
     </nav>
   );
