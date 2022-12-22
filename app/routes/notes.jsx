@@ -1,4 +1,6 @@
+import { redirect } from '@remix-run/node';
 import Input from '~/components/Input';
+import { getStoredNotes, storeNotes } from '~/data/notes';
 
 const NotesPage = () => {
   return (
@@ -13,19 +15,20 @@ const NotesPage = () => {
           className="container bg-white/25 rounded-lg flex flex-col gap-5 text-start p-10"
         >
           <Input
+            id="title"
+            name="title"
             type="input"
             label="Title"
             placeholder="E.g. Create a new Remix project..."
           />
           <Input
+            id="description"
+            name="description"
             type="textarea"
             label="Description"
             placeholder="E.g. Create a message application that blocks fake news being shared..."
           />
-          <button
-            type="submit"
-            className="flex place-self-end px-6 py-3 bg-orange-400/95 hover:bg-orange-400 rounded-md text-white font-bold border-dashed border-4 border-white text-xl"
-          >
+          <button className="flex place-self-end px-6 py-3 bg-orange-400/95 hover:bg-orange-400 rounded-md text-white font-bold border-dashed border-4 border-white text-xl">
             Add note
           </button>
         </form>
@@ -38,3 +41,13 @@ const NotesPage = () => {
 };
 
 export default NotesPage;
+
+export async function action({ request }) {
+  const formData = await request.formData();
+  const noteData = Object.fromEntries(formData); // best way of getting the note data
+  noteData.id = new Date().toISOString();
+  const existingNotes = await getStoredNotes();
+  const updtedNotes = existingNotes.concat(noteData);
+  await storeNotes(updtedNotes);
+  return redirect('/notes');
+}
