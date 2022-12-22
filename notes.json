@@ -1,1 +1,19 @@
-{"notes":[{"title":"Remix is cool!","description":"Keep learning remix getting advanced topics!","id":"2022-12-22T10:55:53.021Z"},{"title":"Server side rendering is fast","description":"Some description here...","id":"2022-12-22T11:04:06.088Z"},{"title":"Another note","description":"Some description here...","id":"2022-12-22T11:47:09.189Z"}]}
+{
+  "notes": [
+    {
+      "title": "Remix is cool!",
+      "description": "Keep learning remix getting advanced topics!",
+      "id": "2022-12-22T10:55:53.021Z"
+    },
+    {
+      "title": "Server side rendering is fast",
+      "description": "Some description here...",
+      "id": "2022-12-22T11:04:06.088Z"
+    },
+    {
+      "title": "Another note",
+      "description": "Some description here...",
+      "id": "2022-12-22T11:47:09.189Z"
+    }
+  ]
+}

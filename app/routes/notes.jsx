@@ -30,6 +30,23 @@ export async function loader() {
 export async function action({ request }) {
   const formData = await request.formData();
   const noteData = Object.fromEntries(formData); // best way of getting the note data
+
+  //validations
+  if (noteData.title.length < 5) {
+    return {
+      title: {
+        message: 'Please provide a longer title',
+      },
+    };
+  }
+  if (noteData.description.length < 200) {
+    return {
+      description: {
+        message: 'Please provide a longer description',
+      },
+    };
+  }
+
   noteData.id = new Date().toISOString();
   const existingNotes = await getStoredNotes();
   const updtedNotes = existingNotes.concat(noteData);
