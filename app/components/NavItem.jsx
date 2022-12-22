@@ -4,10 +4,10 @@ const NavItem = ({ to, text }) => {
   return (
     <NavLink
       className={({ isActive }) => {
-        const defaultStyle = 'font-semibold';
+        const defaultStyle = 'font-semibold text-xl';
         return isActive
           ? `text-blue-500 ${defaultStyle}`
-          : `text-gray-500 ${defaultStyle}`;
+          : `text-white/75 ${defaultStyle}`;
       }}
       to={to}
     >

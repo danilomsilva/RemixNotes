@@ -6,7 +6,7 @@ const Index = () => {
       <h1 className="text-4xl font-semibold text-white/75">
         A better way of keeping track of your notes
       </h1>
-      <h6 className="text-gray-600">
+      <h6 className="text-xl text-white/75">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis id at
         sint earum doloremque quod placeat iusto repudiandae consequuntur,
         facere quas nam recusandae et dolorum saepe cumque quidem cum sunt.

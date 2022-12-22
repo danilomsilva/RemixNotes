@@ -4,7 +4,7 @@ const Input = ({ label, placeholder, type, id, name }) => {
   const isTextArea = type === 'textarea';
   return (
     <div className="flex flex-col gap-2">
-      <label className="font-semibold text-gray-700" htmlFor={name}>
+      <label className="font-semibold text-white/75" htmlFor={name}>
         {label}
       </label>
       {isTextArea ? (
