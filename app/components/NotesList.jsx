@@ -1,12 +1,16 @@
-import React from 'react';
+import { Link } from '@remix-run/react';
 import NoteCard from './NoteCard';
 
 const NotesList = ({ notes }) => {
   return (
     <section className="flex flex-col gap-5">
-      {notes.map((note) => (
-        <NoteCard key={note.id} note={note} />
-      ))}
+      {notes.map((note) => {
+        return (
+          <Link to={note.id} key={note.id}>
+            <NoteCard note={note} />
+          </Link>
+        );
+      })}
     </section>
   );
 };

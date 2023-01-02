@@ -8,11 +8,11 @@ const NotesPage = () => {
   const notes = useLoaderData();
 
   return (
-    <main className="flex text-center gap-10 bg-gradient-to-r from-cyan-500 to-blue-500 h-screen pt-32 px-5">
-      <section className="container border border-slate-300 rounded-lg pt-10 pb-5 px-5 flex flex-col gap-10 h-fit">
+    <main className="flex text-center gap-10 bg-gradient-to-r from-cyan-500 to-blue-500 h-fit pt-32 px-5 pb-10">
+      <section className="container pt-10 pb-5 px-5 flex flex-col gap-10 h-fit">
         <NotesForm />
       </section>
-      <section className="container border border-slate-300 rounded-lg pt-10 pb-5 px-5 flex flex-col gap-10 h-fit">
+      <section className="container pt-10 pb-5 px-5 flex flex-col gap-10 h-fit">
         <h1 className="font-semibold text-2xl text-white/80">Your notes</h1>
         <NotesList notes={notes} />
       </section>
@@ -53,3 +53,7 @@ export async function action({ request }) {
   await storeNotes(updtedNotes);
   return redirect('/notes');
 }
+
+// export function ErrorBoundary({ error }) {
+//   // error boundary for the notes route only
+// }

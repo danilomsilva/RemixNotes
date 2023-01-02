@@ -6,6 +6,8 @@ const NotesForm = () => {
   const transition = useTransition();
   const isSubmitting = transition.state === 'submitting';
   const error = useActionData();
+  const titleErrorMessage = error?.title?.message;
+  const descriptionErrorMessage = error?.description?.message;
 
   return (
     <>
@@ -24,7 +26,7 @@ const NotesForm = () => {
           label="Title"
           placeholder="E.g. Create a new Remix project..."
         />
-        {error?.title?.message && <ErrorMessage text={error.title.message} />}
+        {titleErrorMessage && <ErrorMessage text={titleErrorMessage} />}
         <Input
           id="description"
           name="description"
@@ -32,8 +34,8 @@ const NotesForm = () => {
           label="Description"
           placeholder="E.g. Create a message application that blocks fake news being shared..."
         />
-        {error?.description?.message && (
-          <ErrorMessage text={error.description.message} />
+        {descriptionErrorMessage && (
+          <ErrorMessage text={descriptionErrorMessage} />
         )}
         <button
           disabled={isSubmitting}

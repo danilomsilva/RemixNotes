@@ -7,7 +7,7 @@ const NavItem = ({ to, text }) => {
         const defaultStyle = 'font-semibold text-xl';
         return isActive
           ? `text-blue-500 ${defaultStyle}`
-          : `text-white/75 ${defaultStyle}`;
+          : `text-black/75 ${defaultStyle}`;
       }}
       to={to}
     >
